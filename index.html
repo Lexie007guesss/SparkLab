@@ -2,7 +2,10 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <link rel="stylesheet" href="/SparkLab/styles.css" />
     <title>野性共鸣 | 发现你的荒野化身</title>
   </head>
@@ -753,6 +756,31 @@
           });
         });
       });
+      // 在现有JS中添加移动端触摸反馈
+      document.addEventListener("DOMContentLoaded", function () {
+        // 为选项添加触摸反馈
+        document.querySelectorAll(".option").forEach((item) => {
+          item.addEventListener("touchstart", function () {
+            this.style.transform = "scale(0.98)";
+          });
+
+          item.addEventListener("touchend", function () {
+            this.style.transform = "";
+          });
+        });
+
+        // 按钮触摸反馈
+        document.querySelectorAll("button").forEach((btn) => {
+          btn.addEventListener("touchstart", function () {
+            this.style.opacity = "0.8";
+          });
+
+          btn.addEventListener("touchend", function () {
+            this.style.opacity = "1";
+          });
+        });
+      });
     </script>
   </body>
 </html>
+
