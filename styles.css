@@ -623,3 +623,260 @@ footer {
     max-width: 300px;
   }
 }
+/* 移动端表单优化 */
+@media (max-width: 768px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* 防止iOS缩放 */
+  }
+
+  /* 修复iOS按钮样式 */
+  button {
+    appearance: none;
+    border-radius: 12px;
+  }
+}
+/* 防止元素超出屏幕 */
+* {
+  max-width: 100%;
+}
+
+.container {
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+/* 移动端性能优化 */
+@media (max-width: 768px) {
+  /* 减少动画 */
+  .star {
+    animation-duration: 4s;
+  }
+
+  .a-emoji {
+    animation-duration: 4s;
+  }
+
+  /* 减少阴影提升性能 */
+  .card,
+  .q-item,
+  .a-card,
+  .analysis {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* 简化渐变 */
+  .title,
+  .result-title,
+  .a-name {
+    background: linear-gradient(135deg, var(--teal), #fff);
+    background-clip: text;
+  }
+}
+/* 提高移动端触摸体验 */
+@media (max-width: 768px) {
+  button,
+  .btn,
+  .btn-action,
+  .btn-submit,
+  .option {
+    min-height: 44px; /* 最小触摸区域 */
+  }
+
+  .option {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  /* 防止300ms点击延迟 */
+  .option,
+  button {
+    touch-action: manipulation;
+  }
+
+  /* 优化滚动体验 */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 移除部分hover效果 */
+  .option:hover {
+    transform: none;
+  }
+
+  .option:active {
+    background: rgba(46, 196, 182, 0.1);
+    border-color: var(--teal);
+  }
+}
+/* 添加移动端专用样式 */
+@media (max-width: 768px) {
+  /* 更激进的小屏适配 */
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  /* 原有768px调整优化 */
+  .container {
+    padding: 0 1.2rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .f-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .f-icon {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+
+  .btn,
+  .btn-submit {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* 问题部分优化 */
+  .q-item {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .q-text {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .option {
+    padding: 1.2rem;
+  }
+
+  .option-emoji {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .option-text {
+    font-size: 1rem;
+  }
+
+  /* 结果页面优化 */
+  .animal-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .a-card,
+  .analysis {
+    padding: 1.5rem;
+  }
+
+  .a-emoji {
+    font-size: 4rem;
+  }
+
+  .a-name {
+    font-size: 2rem;
+  }
+
+  .tag {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .analysis-title {
+    font-size: 1.8rem;
+  }
+
+  .knowledge {
+    padding: 1.5rem;
+  }
+
+  /* 关于部分优化 */
+  .about {
+    padding: 1.5rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-item {
+    padding: 1rem 0;
+  }
+
+  /* 按钮组优化 */
+  .actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn-action {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem 1.5rem;
+  }
+
+  /* 页脚优化 */
+  footer {
+    padding: 2rem 0;
+  }
+}
+
