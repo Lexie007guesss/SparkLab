@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/SparkLab/styles.css" />
+    <title>野性共鸣 | 发现你的荒野化身</title>
+  </head>
+  <body>
+    <div class="bg" id="bg"></div>
+    <div class="mountain"></div>
+
+    <div class="container">
+      <header id="home" class="fade-in">
+        <h1 class="title">野性共鸣</h1>
+        <p class="tagline">发现你的荒野化身，守护它们的未来</p>
+
+        <div class="divider"></div>
+
+        <div class="hero">
+          <div class="card">
+            <h2 class="card-title">探索你内心的野生动物</h2>
+            <div class="card-text">
+              <p>
+                在数字时代的喧嚣中，我们的内心深处仍保留着与自然的原始连接。
+              </p>
+              <p>
+                这个测试将带你踏上一段旅程，通过科学的性格映射，发现与你灵魂共鸣的野生动物。
+              </p>
+              <p>
+                这不仅是一次有趣的探索，更是了解濒危物种、参与保护行动的起点。
+              </p>
+            </div>
+
+            <div class="features">
+              <div class="f-card">
+                <div class="f-icon">🔍</div>
+                <h3 class="f-title">科学映射</h3>
+                <p class="f-desc">基于动物行为学与心理学设计的精准测试</p>
+              </div>
+              <div class="f-card">
+                <div class="f-icon">🌿</div>
+                <h3 class="f-title">深度连接</h3>
+                <p class="f-desc">建立个人与野生动物之间情感与认知的桥梁</p>
+              </div>
+              <div class="f-card">
+                <div class="f-icon">🛡️</div>
+                <h3 class="f-title">保护意识</h3>
+                <p class="f-desc">了解濒危物种现状，获取具体保护行动指南</p>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="cta">
+              <button class="btn" onclick="startQuiz()">
+                <span class="btn-icon">🐾</span>
+                开始我的守护兽设测试
+              </button>
+              <p style="margin-top: 1.5rem; color: var(--text-muted)">
+                8个问题，了解你的荒野灵魂
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="quiz" id="quiz">
+        <h2 class="section-title">性格探索之旅</h2>
+        <p class="section-sub">
+          请放松心情，凭直觉回答以下问题。每个选择都会帮助我们更好地了解你
+        </p>
+
+        <div class="q-item" data-q="1">
+          <div class="q-header">
+            <span class="q-num">问题 1</span>
+            <div class="q-text">
+              在一个完全自由的周末，没有任何计划，你会怎样度过这一天？
+            </div>
+          </div>
+          <div class="options">
+            <div class="option" data-o="social" onclick="select(this)">
+              <div class="option-emoji">👫</div>
+              <div class="option-text">
+                联系朋友们，一起聚餐、聊天，享受热闹的时光
+              </div>
+            </div>
+            <div class="option" data-o="independent" onclick="select(this)">
+              <div class="option-emoji">📖</div>
+              <div class="option-text">
+                给自己泡杯茶，找一本好书，安静地享受一个人的时光
+              </div>
+            </div>
+            <div class="option" data-o="nature" onclick="select(this)">
+              <div class="option-emoji">🌳</div>
+              <div class="option-text">
+                去附近的公园或郊外散步，呼吸新鲜空气，感受大自然
+              </div>
+            </div>
+            <div class="option" data-o="creative" onclick="select(this)">
+              <div class="option-emoji">🎨</div>
+              <div class="option-text">
+                专注于自己的兴趣爱好，比如画画、写作或学习新技能
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="q-item" data-q="2">
+          <div class="q-header">
+            <span class="q-num">问题 2</span>
+            <div class="q-text">
+              当你遇到一个完全陌生的挑战时，你的第一反应是什么？
+            </div>
+          </div>
+          <div class="options">
+            <div class="option" data-o="adventurous" onclick="select(this)">
+              <div class="option-emoji">🚀</div>
+              <div class="option-text">
+                感到兴奋，迫不及待想尝试，相信能从中学习到新东西
+              </div>
+            </div>
+            <div class="option" data-o="cautious" onclick="select(this)">
+              <div class="option-emoji">🧐</div>
+              <div class="option-text">
+                先观察和了解，收集足够信息后再决定如何行动
+              </div>
+            </div>
+            <div class="option" data-o="cooperative" onclick="select(this)">
+              <div class="option-emoji">🤗</div>
+              <div class="option-text">
+                向有经验的人请教，听取建议后再做决定
+              </div>
+            </div>
+            <div class="option" data-o="calm" onclick="select(this)">
+              <div class="option-emoji">🧘</div>
+              <div class="option-text">
+                保持冷静，相信船到桥头自然直，不给自己太大压力
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="q-item" data-q="3">
+          <div class="q-header">
+            <span class="q-num">问题 3</span>
+            <div class="q-text">你的好朋友会如何描述你的性格特点？</div>
+          </div>
+          <div class="options">
+            <div class="option" data-o="clever" onclick="select(this)">
+              <div class="option-emoji">🤓</div>
+              <div class="option-text">
+                头脑灵活，总能想出有趣的点子，适应能力强
+              </div>
+            </div>
+            <div class="option" data-o="loyal" onclick="select(this)">
+              <div class="option-emoji">🤝</div>
+              <div class="option-text">
+                值得信赖，对朋友忠诚，总是在需要时出现
+              </div>
+            </div>
+            <div class="option" data-o="wise" onclick="select(this)">
+              <div class="option-emoji">😌</div>
+              <div class="option-text">
+                情绪稳定，思考深入，经常有独到的见解
+              </div>
+            </div>
+            <div class="option" data-o="extroverted" onclick="select(this)">
+              <div class="option-emoji">😄</div>
+              <div class="option-text">
+                充满活力，善于社交，能带动周围的气氛
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="q-item" data-q="4">
+          <div class="q-header">
+            <span class="q-num">问题 4</span>
+            <div class="q-text">在团队合作中，你通常扮演什么角色？</div>
+          </div>
+          <div class="options">
+            <div class="option" data-o="coordinator" onclick="select(this)">
+              <div class="option-emoji">👥</div>
+              <div class="option-text">
+                促进团队沟通，确保每个人都能参与和表达
+              </div>
+            </div>
+            <div class="option" data-o="innovative" onclick="select(this)">
+              <div class="option-emoji">💡</div>
+              <div class="option-text">
+                提供创新思路，帮助团队找到新的解决方案
+              </div>
+            </div>
+            <div class="option" data-o="detail" onclick="select(this)">
+              <div class="option-emoji">🎯</div>
+              <div class="option-text">
+                专注于任务执行，确保每个细节都处理到位
+              </div>
+            </div>
+            <div class="option" data-o="action" onclick="select(this)">
+              <div class="option-emoji">⚡</div>
+              <div class="option-text">快速行动，推动项目进展，不畏惧挑战</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="q-item" data-q="5">
+          <div class="q-header">
+            <span class="q-num">问题 5</span>
+            <div class="q-text">你理想中的生活场景是怎样的？</div>
+          </div>
+          <div class="options">
+            <div class="option" data-o="community" onclick="select(this)">
+              <div class="option-emoji">🏠</div>
+              <div class="option-text">
+                在热闹的社区，邻居们关系亲密，经常互相串门
+              </div>
+            </div>
+            <div class="option" data-o="peaceful" onclick="select(this)">
+              <div class="option-emoji">🏡</div>
+              <div class="option-text">
+                安静的小镇，有自己的小院子，生活节奏舒缓
+              </div>
+            </div>
+            <div class="option" data-o="nature" onclick="select(this)">
+              <div class="option-emoji">⛰️</div>
+              <div class="option-text">
+                靠近自然的地方，能看到山、水，听到鸟鸣
+              </div>
+            </div>
+            <div class="option" data-o="curious" onclick="select(this)">
+              <div class="option-emoji">🏙️</div>
+              <div class="option-text">
+                文化多元的城市，有各种展览、演出和学习机会
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="q-item" data-q="6">
+          <div class="q-header">
+            <span class="q-num">问题 6</span>
+            <div class="q-text">
+              当你感到疲惫或压力大时，什么样的方式最能让你恢复能量？
+            </div>
+          </div>
+          <div class="options">
+            <div class="option" data-o="emotional" onclick="select(this)">
+              <div class="option-emoji">💬</div>
+              <div class="option-text">
+                和信任的朋友聊聊天，分享感受，获得支持
+              </div>
+            </div>
+            <div class="option" data-o="independent" onclick="select(this)">
+              <div class="option-emoji">🎧</div>
+              <div class="option-text">
+                一个人听听音乐，做点手工，享受独处的安静
+              </div>
+            </div>
+            <div class="option" data-o="physical" onclick="select(this)">
+              <div class="option-emoji">🚶</div>
+              <div class="option-text">
+                出去走走，运动一下，让身体和心灵都动起来
+              </div>
+            </div>
+            <div class="option" data-o="growth" onclick="select(this)">
+              <div class="option-emoji">📚</div>
+              <div class="option-text">
+                学习新知识，专注于能让自己成长的事情
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="q-item" data-q="7">
+          <div class="q-header">
+            <span class="q-num">问题 7</span>
+            <div class="q-text">面对野生动物保护，你最认同哪种方式？</div>
+          </div>
+          <div class="options">
+            <div class="option" data-o="education" onclick="select(this)">
+              <div class="option-emoji">📚</div>
+              <div class="option-text">通过教育和科普，提高公众保护意识</div>
+            </div>
+            <div class="option" data-o="community" onclick="select(this)">
+              <div class="option-emoji">🤝</div>
+              <div class="option-text">
+                与当地社区合作，寻找人与自然的和谐共处方式
+              </div>
+            </div>
+            <div class="option" data-o="direct" onclick="select(this)">
+              <div class="option-emoji">🛡️</div>
+              <div class="option-text">直接参与野外保护工作，如反盗猎巡逻</div>
+            </div>
+            <div class="option" data-o="policy" onclick="select(this)">
+              <div class="option-emoji">⚖️</div>
+              <div class="option-text">推动保护政策和法律的完善与执行</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="q-item" data-q="8">
+          <div class="q-header">
+            <span class="q-num">问题 8</span>
+            <div class="q-text">如果你能与一种动物交换一天身份，你会选择？</div>
+          </div>
+          <div class="options">
+            <div class="option" data-o="mysterious" onclick="select(this)">
+              <div class="option-emoji">🌌</div>
+              <div class="option-text">
+                夜空中的猫头鹰，体验神秘而智慧的夜间生活
+              </div>
+            </div>
+            <div class="option" data-o="free" onclick="select(this)">
+              <div class="option-emoji">🦅</div>
+              <div class="option-text">
+                翱翔的雄鹰，感受俯瞰大地的自由与广阔
+              </div>
+            </div>
+            <div class="option" data-o="social" onclick="select(this)">
+              <div class="option-emoji">🐺</div>
+              <div class="option-text">
+                狼群中的一员，体验紧密的社会联系与合作
+              </div>
+            </div>
+            <div class="option" data-o="adaptable" onclick="select(this)">
+              <div class="option-emoji">🦊</div>
+              <div class="option-text">
+                林间的狐狸，探索城市与自然的边界地带
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="submit">
+          <p style="margin-bottom: 2rem; font-size: 1.3rem; color: var(--teal)">
+            完成所有问题后，点击下方按钮查看你的守护兽设
+          </p>
+          <button
+            class="btn-submit"
+            id="submit"
+            onclick="calcResult()"
+            disabled
+          >
+            查看我的守护兽设结果
+          </button>
+        </div>
+      </section>
+
+      <section class="result" id="result">
+        <div class="result-header">
+          <h2 class="result-title">你的守护兽设已揭晓</h2>
+          <p class="result-sub">发现与你灵魂共鸣的野生动物伙伴</p>
+        </div>
+
+        <div class="animal-container fade-in">
+          <div class="a-card">
+            <div class="a-emoji" id="emoji"></div>
+            <h3 class="a-name" id="name"></h3>
+            <div class="tags" id="tags"></div>
+            <div class="a-desc" id="desc"></div>
+          </div>
+
+          <div class="analysis">
+            <h3 class="analysis-title">个性特质分析</h3>
+            <div class="traits" id="traits"></div>
+            <div class="knowledge">
+              <h4 class="knowledge-title">保护现状与威胁</h4>
+              <p class="knowledge-text" id="fact"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about slide-up">
+          <h3 class="about-title">你的专属守护故事</h3>
+          <div class="about-content" id="about"></div>
+        </div>
+
+        <div class="protection">
+          <h4 class="protection-title">🛡 你的守护行动指南</h4>
+          <p class="protection-content" id="actions"></p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="actions">
+          <button class="btn-action" onclick="share()">🌍 分享我的兽设</button>
+          <button class="btn-action primary" onclick="explore()">
+            🐾 探索更多濒危物种
+          </button>
+          <button class="btn-action" onclick="restart()">🔄 重新测试</button>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-content">
+          <p class="footer-text">
+            "野性共鸣"是一个连接人类与野生动物的科学探索项目。所有测试结果基于动物行为学与心理学研究设计，旨在通过情感共鸣促进野生动物保护意识。
+          </p>
+          <p class="footer-note">
+            每一份关注，都是保护的力量。每一份行动，都是未来的希望。
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const animals = [
+        {
+          name: "雪豹",
+          emoji: "🐆",
+          tags: ["雪山隐士", "独立", "适应力强", "神秘", "优雅"],
+          color: "#2EC4B6",
+          desc: "你像雪豹一样独立、适应力强。作为高山生态系统中的顶级掠食者，雪豹拥有在极端环境中生存的卓越能力。你同样具备在挑战中保持冷静、在孤独中寻找力量的特质，是那种不随波逐流、坚守内心信念的人。",
+          traits: [
+            { name: "独立自主", value: 9 },
+            { name: "适应能力", value: 8 },
+            { name: "冷静思考", value: 7 },
+            { name: "敏锐观察", value: 8 },
+          ],
+          fact: "全球雪豹仅存约4000只，它们正面临栖息地丧失、气候变化和非法盗猎的严重威胁。作为高山生态系统的关键物种，雪豹的存续对整个生态系统健康至关重要。",
+          about: [
+            {
+              title: "在人际关系中",
+              text: "你像雪豹一样珍惜独处时光，但也重视与少数挚友的深度连接。你的社交圈不大，但每个朋友都是经过时间考验的。",
+            },
+            {
+              title: "面对挑战时",
+              text: "你像雪豹适应高山环境一样，能在不同情境中找到自己的位置。面对压力时，你倾向于冷静分析而非冲动应对。",
+            },
+            {
+              title: "专属守护故事",
+              text: "作为'雪山隐士'，我在黎明前登上山脊，俯瞰着沉睡的山谷。我的白色斑纹是雪地的伪装，也是孤独的印记。但今天，人类的足迹越来越近，我的领地正在缩小...",
+            },
+          ],
+          actions:
+            "• 学习传播：了解雪豹保护知识，向朋友家人分享<br>• 负责任旅行：前往雪豹栖息地时选择生态友好旅行<br>• 支持保护：参与WWF、雪豹信托等组织的保护项目<br>• 减少碳足迹：气候变化威胁雪豹栖息地，你的每个环保选择都有帮助",
+        },
+        {
+          name: "座头鲸",
+          emoji: "🐋",
+          tags: ["海洋歌者", "智慧", "迁徙", "优雅", "社会性"],
+          color: "#6E44FF",
+          desc: "你像座头鲸一样充满智慧与情感深度。作为海洋中最优雅的迁徙者之一，座头鲸拥有复杂的社交结构和美妙的歌声。你善于深层沟通，理解情感的联系，并在广阔的生命旅程中不断学习和成长。",
+          traits: [
+            { name: "情感深度", value: 9 },
+            { name: "沟通能力", value: 8 },
+            { name: "学习成长", value: 8 },
+            { name: "社交智慧", value: 7 },
+          ],
+          fact: "座头鲸的种群在保护下正在缓慢恢复，但仍面临船只撞击、渔网缠绕和海洋噪音污染的威胁。它们的长途迁徙需要清洁、安静的海洋环境。",
+          about: [
+            {
+              title: "在人际关系中",
+              text: "你像座头鲸一样重视深度连接，能理解他人的情感需求。你的社交方式更像是建立长期的、有意义的联系。",
+            },
+            {
+              title: "面对挑战时",
+              text: "你善于从经验中学习，像座头鲸迁徙一样，在广阔的生命旅程中寻找方向和意义。面对困难，你会寻求创造性的解决方案。",
+            },
+            {
+              title: "专属守护故事",
+              text: "我在深蓝的海洋中歌唱，声音能传播数百公里。每年，我都要完成动物界最长的迁徙之一。但如今，海洋中充满了人类船只的噪音...",
+            },
+          ],
+          actions:
+            "• 支持海洋保护区建立<br>• 选择可持续海鲜<br>• 减少塑料使用，保护海洋环境<br>• 支持鲸类保护组织的研究与保护工作",
+        },
+        {
+          name: "苏门答腊虎",
+          emoji: "🐅",
+          tags: ["丛林之王", "力量", "领导力", "勇气", "守护"],
+          color: "#FF9E00",
+          desc: "你像苏门答腊虎一样拥有天生的领导力和保护欲。作为丛林中的王者，老虎展现着力量与优雅的完美结合。你具备强烈的责任感和领地意识，会为了保护所爱之人而奋不顾身，是天生的守护者。",
+          traits: [
+            { name: "领导能力", value: 9 },
+            { name: "保护意识", value: 8 },
+            { name: "勇气决心", value: 8 },
+            { name: "力量掌控", value: 7 },
+          ],
+          fact: "苏门答腊虎是全球最濒危的老虎亚种，仅存约400只。森林砍伐和非法盗猎是它们面临的主要威胁。每一只老虎都需要广阔的领地生存，而它们的家园正在迅速消失。",
+          about: [
+            {
+              title: "在人际关系中",
+              text: "你像老虎保护领地一样保护着自己关心的人。你有很强的家庭和团体责任感，是朋友和家人可以依赖的支柱。",
+            },
+            {
+              title: "面对挑战时",
+              text: "你像老虎狩猎一样专注而果断。面对困难，你不会回避，而是直面挑战，寻找突破的机会。你的勇气常常能激励他人。",
+            },
+            {
+              title: "专属守护故事",
+              text: "我是丛林的守护者，我的吼声在雨林中回荡。但推土机的声音越来越近，我的家园正在被棕榈榈油种植园吞噬...",
+            },
+          ],
+          actions:
+            "• 抵制含有不可持续棕榈榈油的产品<br>• 支持老虎保护区的建立<br>• 举报非法野生动物贸易<br>• 参与森林保护项目，保护老虎栖息地",
+        },
+        {
+          name: "北极狐",
+          emoji: "🦊",
+          tags: ["雪地精灵", "机智", "适应力", "生存智慧", "变色"],
+          color: "#E0E0E0",
+          desc: "你像北极狐一样机智而富有适应力。这种能够在零下50度生存的小型猎手，随着季节变换毛色，是适应环境的专家。你同样拥有快速适应变化的能力，在挑战中找到创造性的解决方案，是真正的生存艺术家。",
+          traits: [
+            { name: "环境适应", value: 9 },
+            { name: "机智灵活", value: 8 },
+            { name: "生存智慧", value: 8 },
+            { name: "变化应对", value: 7 },
+          ],
+          fact: "北极狐受到气候变化的严重影响。随着北极变暖，它们的白色冬季伪装在雪量减少的环境中变得危险，而竞争者也更易进入它们的领地。",
+          about: [
+            {
+              title: "在人际关系中",
+              text: "你像北极狐一样善于观察和适应不同的社交环境。你能快速理解不同人的需求，调整自己的交流方式。",
+            },
+            {
+              title: "面对挑战时",
+              text: "你像北极狐在极端环境中生存一样，善于利用有限的资源创造机会。面对变化，你总能找到适应的方法。",
+            },
+            {
+              title: "专属守护故事",
+              text: "我的毛色随着季节从雪白变为灰褐，完美融入环境。但在日益温暖的北极，雪季缩短，我的白色伪装变成了致命的暴露...",
+            },
+          ],
+          actions:
+            "• 减少碳足迹对抗气候变化<br>• 支持北极保护研究<br>• 参与环保生活方式，减少能源消耗<br>• 关注并分享气候变化对北极动物的影响",
+        },
+        {
+          name: "黑猩猩",
+          emoji: "🐒",
+          tags: ["森林智者", "智慧", "社会性", "工具使用", "情感丰富"],
+          color: "#8A94A7",
+          desc: "你像黑猩猩一样充满智慧与情感深度。作为人类最近的亲属之一，黑猩猩展现着惊人的学习能力和复杂的社会行为。你善于思考和解决问题，重视社会关系，并拥有丰富的情感世界。",
+          traits: [
+            { name: "问题解决", value: 9 },
+            { name: "社交智慧", value: 8 },
+            { name: "学习能力", value: 8 },
+            { name: "情感深度", value: 7 },
+          ],
+          fact: "黑猩猩种群数量在持续下降，主要威胁来自森林砍伐、非法宠物贸易和丛林肉狩猎。它们复杂的社会结构和文化传承正面临消失的危险。",
+          about: [
+            {
+              title: "在人际关系中",
+              text: "你像黑猩猩一样重视社交网络和社会联系。你有能力建立和维护复杂的社会关系，理解群体的动态。",
+            },
+            {
+              title: "面对挑战时",
+              text: "你像黑猩猩使用工具一样，善于利用现有资源解决问题。你擅长思考和分析，能找到有效的解决方案。",
+            },
+            {
+              title: "专属守护故事",
+              text: "我使用工具敲开坚果，教导孩子识别数百种植物。我们的家族有着复杂的社交网络和代代相传的文化。但森林在消失...",
+            },
+          ],
+          actions:
+            "• 支持灵长类动物保护组织<br>• 抵制丛林肉和非法宠物贸易<br>• 选择可持续木材和纸张<br>• 参与热带雨林保护，保护黑猩猩栖息地",
+        },
+      ];
+
+      let answers = [];
+
+      function initStars() {
+        const bg = document.getElementById("bg");
+        for (let i = 0; i < 150; i++) {
+          const star = document.createElement("div");
+          star.className = "star";
+          star.style.width = Math.random() * 3 + 1 + "px";
+          star.style.height = star.style.width;
+          star.style.left = Math.random() * 100 + "%";
+          star.style.top = Math.random() * 100 + "%";
+          star.style.animationDelay = Math.random() * 5 + "s";
+          star.style.opacity = Math.random() * 0.5 + 0.3;
+          bg.appendChild(star);
+        }
+      }
+
+      function startQuiz() {
+        document.getElementById("home").style.display = "none";
+        document.getElementById("quiz").style.display = "block";
+        document.getElementById("quiz").scrollIntoView({ behavior: "smooth" });
+      }
+
+      function select(el) {
+        const q = el.closest(".q-item");
+        const idx = parseInt(q.dataset.q) - 1;
+        const val = el.dataset.o;
+
+        q.querySelectorAll(".option").forEach((opt) => {
+          opt.classList.remove("selected");
+        });
+        el.classList.add("selected");
+        answers[idx] = val;
+        checkAnswers();
+      }
+
+      function checkAnswers() {
+        const btn = document.getElementById("submit");
+        btn.disabled = answers.filter((a) => a).length !== 8;
+      }
+
+      function calcResult() {
+        if (answers.filter((a) => a).length !== 8) {
+          alert(`你还有 ${8 - answers.filter((a) => a).length} 个问题没有回答`);
+          return;
+        }
+
+        const scores = {
+          independent: 0,
+          social: 0,
+          adventurous: 0,
+          clever: 0,
+          loyal: 0,
+          wise: 0,
+          extroverted: 0,
+          innovative: 0,
+          detail: 0,
+          action: 0,
+          community: 0,
+          peaceful: 0,
+          nature: 0,
+          curious: 0,
+          emotional: 0,
+          physical: 0,
+          growth: 0,
+          mysterious: 0,
+          free: 0,
+          adaptable: 0,
+        };
+
+        answers.forEach((a) => {
+          if (scores[a] !== undefined) scores[a] += 2;
+        });
+
+        let bestIdx = 0;
+        let bestScore = 0;
+
+        animals.forEach((a, i) => {
+          let score = 0;
+          switch (i) {
+            case 0:
+              score = scores.independent * 3 + scores.mysterious + scores.wise;
+              break;
+            case 1:
+              score = scores.social * 2 + scores.emotional + scores.growth;
+              break;
+            case 2:
+              score = scores.action * 3 + scores.loyal + scores.community;
+              break;
+            case 3:
+              score = scores.adaptable * 3 + scores.clever + scores.curious;
+              break;
+            case 4:
+              score = scores.social * 2 + scores.innovative + scores.growth;
+              break;
+          }
+          if (score > bestScore) {
+            bestScore = score;
+            bestIdx = i;
+          }
+        });
+
+        showResult(animals[bestIdx]);
+      }
+
+      function showResult(a) {
+        document.getElementById("emoji").textContent = a.emoji;
+        document.getElementById("name").textContent = a.name;
+        document.getElementById("desc").textContent = a.desc;
+        document.getElementById("fact").textContent = a.fact;
+        document.getElementById("actions").innerHTML = a.actions;
+
+        const tags = document.getElementById("tags");
+        tags.innerHTML = "";
+        a.tags.forEach((t) => {
+          const tag = document.createElement("span");
+          tag.className = "tag";
+          tag.textContent = t;
+          tags.appendChild(tag);
+        });
+
+        const traits = document.getElementById("traits");
+        traits.innerHTML = "";
+        a.traits.forEach((t) => {
+          const trait = document.createElement("div");
+          trait.className = "trait";
+          trait.innerHTML = `
+      <div class="trait-header">
+        <span class="trait-name">${t.name}</span>
+        <span class="trait-value">${t.value}/10</span>
+      </div>
+      <div class="bar">
+        <div class="bar-fill" style="width:${t.value * 10}%"></div>
+      </div>
+    `;
+          traits.appendChild(trait);
+        });
+
+        const about = document.getElementById("about");
+        about.innerHTML = "";
+        a.about.forEach((item) => {
+          const div = document.createElement("div");
+          div.className = "about-item";
+          div.innerHTML = `
+      <h4 class="about-item-title">${item.title}</h4>
+      <p class="about-item-text">${item.text}</p>
+    `;
+          about.appendChild(div);
+        });
+
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("result").style.display = "block";
+        setTimeout(() => {
+          document
+            .getElementById("result")
+            .scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+
+      function share() {
+        alert("一起加入保护行动，守护地球的野生动物伙伴！");
+      }
+      function explore() {
+        alert("更多濒危物种探索页面正在开发中...");
+      }
+      function restart() {
+        answers = [];
+        document
+          .querySelectorAll(".option")
+          .forEach((o) => o.classList.remove("selected"));
+        document.getElementById("submit").disabled = true;
+        document.getElementById("result").style.display = "none";
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("home").style.display = "block";
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 300);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        initStars();
+        document.querySelectorAll(".option").forEach((item) => {
+          item.addEventListener("mouseenter", function () {
+            if (!this.classList.contains("selected"))
+              this.style.transform = "translateY(-5px)";
+          });
+          item.addEventListener("mouseleave", function () {
+            if (!this.classList.contains("selected"))
+              this.style.transform = "translateY(0)";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
